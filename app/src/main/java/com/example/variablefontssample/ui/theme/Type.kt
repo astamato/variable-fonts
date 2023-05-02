@@ -1,28 +1,40 @@
 package com.example.variablefontssample.ui.theme
 
-import androidx.compose.material.Typography
+import android.os.Build
+import androidx.compose.material3.Typography
+import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.unit.sp
+import com.example.variablefontssample.R
 
-// Set of Material typography styles to start with
+@OptIn(ExperimentalTextApi::class)
+val DisplayLargeFontFamily = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    FontFamily(
+        Font(
+            R.font.robotoflex_variable, variationSettings = FontVariation.Settings(
+                FontVariation.weight(DisplayLargeVFConfig.WEIGHT),
+                FontVariation.width(DisplayLargeVFConfig.WIDTH),
+                FontVariation.slant(DisplayLargeVFConfig.SLANT),
+                ascenderHeight(DisplayLargeVFConfig.ASCENDER_HEIGHT),
+            )
+        )
+    )
+} else {
+    FontFamily(
+        Font(
+            R.font.robotoflex_static_regular
+        )
+    )
+}
+
 val Typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
-    )
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
+    displayLarge = TextStyle(
+        fontFamily = DisplayLargeFontFamily,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = 0.sp
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
-    )
-    */
 )
