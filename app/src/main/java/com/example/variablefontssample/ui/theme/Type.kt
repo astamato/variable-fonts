@@ -10,6 +10,9 @@ import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.unit.sp
 import com.example.variablefontssample.R
 
+/**
+ * Create a FontFamily to configure each param of your Typography
+ */
 @OptIn(ExperimentalTextApi::class)
 val DisplayLargeFontFamily = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
     FontFamily(
@@ -30,6 +33,9 @@ val DisplayLargeFontFamily = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
     )
 }
 
+/**
+ * Configure the Typography for each param
+ */
 val Typography = Typography(
     displayLarge = TextStyle(
         fontFamily = DisplayLargeFontFamily,
