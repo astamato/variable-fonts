@@ -50,8 +50,7 @@ fun MyCardView() {
                 )
 
                 val text = remember {
-                    LoremIpsum(500)
-                        .values.first().replace("\n", "").split(" ").toString()
+                    LoremIpsum(500).values.first().replace("\n", "").split(" ").toString()
                 }
                 Text(
                     text = text.substring(1, text.length - 1),
