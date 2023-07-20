@@ -43,7 +43,7 @@ fun MyCardView() {
                     maxLines = 1
                 )
                 Text(
-                    text = "This is my subtitle.",
+                    text = "This is my subtitle",
                     style = MaterialTheme.typography.headlineMedium,
                     modifier = Modifier.padding(bottom = 8.dp),
                     maxLines = 2
